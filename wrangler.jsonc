@@ -1,9 +1,19 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "barebleed",
-  "pages_build_output_dir": "./dist",
   "compatibility_date": "2026-08-21",
+  "workers_dev": true,
   "assets": {
     "directory": "./dist"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "bleed.my/*",
+      "zone_name": "bleed.my"
+    },
+    {
+      "pattern": "www.bleed.my/*",
+      "zone_name": "bleed.my"
+    }
+  ]
 }
