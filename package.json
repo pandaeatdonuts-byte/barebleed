@@ -4,7 +4,11 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build-static.mjs",
-    "preview": "npx wrangler pages dev dist"
+    "postinstall": "node scripts/build-static.mjs",
+    "deploy": "npm run build && wrangler deploy",
+    "preview": "wrangler pages dev dist"
+  },
+  "devDependencies": {
+    "wrangler": "^4.125.0"
   }
 }
-
