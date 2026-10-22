@@ -7,6 +7,7 @@ const backgroundVideoCdn =
   "https://media.githubusercontent.com/media/pandaeatdonuts-byte/barebleed/main/background.mp4";
 const staticFiles = [
   "avatar.png",
+  "avatar.gif",
   "cursor.png",
   "twig.mp3",
   "twig-cover.png",
