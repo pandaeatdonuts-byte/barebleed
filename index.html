@@ -312,13 +312,13 @@
         "progress progress"
         "status status";
       align-items: center;
-      gap: 5px 18px;
-      width: clamp(300px, 40vw, 560px);
-      padding: 12px 14px 8px;
-      border: 1px solid rgba(255, 255, 255, .07);
-      border-radius: 14px;
-      background: linear-gradient(165deg, rgba(13, 14, 17, .86), rgba(7, 8, 10, .8));
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .07), 0 20px 55px rgba(0, 0, 0, .5);
+      gap: 5px 14px;
+      width: clamp(280px, 38vw, 500px);
+      padding: 10px 12px 7px;
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: 10px;
+      background: linear-gradient(170deg, rgba(10, 11, 14, .78), rgba(6, 7, 9, .72));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 18px 50px rgba(0, 0, 0, .5);
       backdrop-filter: blur(18px) saturate(130%);
       -webkit-backdrop-filter: blur(18px) saturate(130%);
       transform: translateY(-16px);
@@ -350,21 +350,21 @@
       width: 100%;
       min-width: 0;
       overflow: hidden;
-      color: rgba(255, 255, 255, .96);
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: .01em;
+      color: rgba(255, 255, 255, .95);
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: .02em;
       text-overflow: ellipsis;
       white-space: nowrap;
+      text-transform: lowercase;
       transition: opacity .3s ease;
     }
 
     .track-subtitle {
       width: 100%;
       overflow: hidden;
-      color: rgba(255, 255, 255, .46);
-      font-size: 10.5px;
-      font-weight: 500;
+      color: rgba(255, 255, 255, .4);
+      font: italic 400 11px/1.3 Georgia, "Times New Roman", serif;
       text-overflow: ellipsis;
       white-space: nowrap;
       padding-left: 2px;
@@ -387,27 +387,25 @@
       place-items: center;
       border: 0;
       border-radius: 50%;
-      color: rgba(255, 255, 255, .88);
+      color: rgba(255, 255, 255, .82);
       background: transparent;
-      transition: transform .25s cubic-bezier(.16, 1, .3, 1), color .2s ease, box-shadow .2s ease;
+      transition: transform .25s cubic-bezier(.16, 1, .3, 1), color .2s ease, background .2s ease;
     }
 
     .player-control:hover {
       color: #fff;
-      transform: scale(1.1);
+      background: rgba(255, 255, 255, .09);
+      transform: scale(1.07);
     }
 
     .player-control.primary {
-      width: 40px;
-      height: 40px;
-      color: #0c0d10;
-      background: #fff;
-      box-shadow: 0 10px 26px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .7);
+      width: 32px;
+      height: 32px;
+      color: #fff;
     }
 
     .player-control.primary:hover {
       transform: scale(1.07);
-      box-shadow: 0 14px 32px rgba(0, 0, 0, .48), inset 0 1px 0 rgba(255, 255, 255, .8);
     }
 
     .transport-icon {
@@ -576,8 +574,9 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      color: rgba(255, 255, 255, .58);
+      color: rgba(255, 255, 255, .44);
       font: 9px/1 monospace;
+      letter-spacing: .06em;
     }
 
     .track-status .remaining {
@@ -654,7 +653,7 @@
     }
 
     .playing .cd-disc {
-      animation: cdSpin 5.2s linear infinite;
+      animation: cdSpin 15s linear infinite;
     }
 
     .cd-artwork {
