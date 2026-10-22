@@ -199,12 +199,6 @@
       }
     }
 
-    @keyframes cdSpin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
     @keyframes eqDance {
       from {
         transform: scaleY(.26);
@@ -650,10 +644,6 @@
       box-shadow: 0 46px 90px rgba(0, 0, 0, .5), 0 14px 34px rgba(0, 0, 0, .4);
       will-change: transform;
       transition: opacity .26s ease;
-    }
-
-    .playing .cd-disc {
-      animation: cdSpin 15s linear infinite;
     }
 
     .cd-artwork {
@@ -1577,6 +1567,31 @@
       eq.appendChild(bar);
     }
 
+    const cdDisc = document.querySelector(".cd-disc");
+    const CD_FULL_SPEED = 24;
+    let cdAngle = 0;
+    let cdVelocity = 0;
+    let cdTarget = 0;
+    let lastFrame = performance.now();
+
+    function tickCd(now) {
+      const dt = Math.min(0.05, (now - lastFrame) / 1000);
+      lastFrame = now;
+
+      const rate = cdTarget > cdVelocity ? 2.8 : 1.2;
+      cdVelocity += (cdTarget - cdVelocity) * (1 - Math.exp(-dt * rate));
+      if (cdTarget === 0 && cdVelocity < 0.02) cdVelocity = 0;
+
+      if (cdVelocity > 0) {
+        cdAngle = (cdAngle + cdVelocity * dt) % 360;
+        cdDisc.style.transform = `rotate(${cdAngle}deg)`;
+      }
+
+      requestAnimationFrame(tickCd);
+    }
+
+    requestAnimationFrame(tickCd);
+
     function openDiscordPicker() {
       discordPicker.hidden = false;
       requestAnimationFrame(() => {
@@ -1815,11 +1830,13 @@
     audio.addEventListener("play", () => {
       playToggle.classList.add("is-playing");
       scene.classList.add("playing");
+      cdTarget = CD_FULL_SPEED;
       updateTrackLabels();
     });
     audio.addEventListener("pause", () => {
       playToggle.classList.remove("is-playing");
       scene.classList.remove("playing");
+      cdTarget = 0;
       updateTrackLabels();
     });
 
