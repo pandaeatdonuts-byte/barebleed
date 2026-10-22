@@ -8,6 +8,8 @@ const staticFiles = [
   "cursor.png",
   "yessirskiii.mp3",
   "yessirskiii-cover.jpg",
+  "marble-floors.mp3",
+  "marble-floors-cover.jpg",
   "fell-in-luv.mp3",
   "fell-in-luv-cover.jpg",
   "twig.mp3",
