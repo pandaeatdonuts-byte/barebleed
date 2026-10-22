@@ -1,9 +1,12 @@
-import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, rm } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const projectRoot = resolve(import.meta.dirname, "..");
 const outputDirectory = resolve(projectRoot, "dist");
 const staticFiles = [
+  "index.html",
+  "styles.css",
+  "script.js",
   "avatar.gif",
   "cursor.png",
   "yessirskiii.mp3",
@@ -30,6 +33,3 @@ await mkdir(outputDirectory, { recursive: true });
 for (const staticFile of staticFiles) {
   await cp(resolve(projectRoot, staticFile), resolve(outputDirectory, staticFile));
 }
-
-const indexHtml = await readFile(resolve(projectRoot, "index.html"), "utf8");
-await writeFile(resolve(outputDirectory, "index.html"), indexHtml);
