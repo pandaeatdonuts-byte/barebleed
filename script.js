@@ -295,7 +295,7 @@ function tickCd(now) {
 
 requestAnimationFrame(tickCd);
 
-const cursorPos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+const cursorPos = { x: (window.innerWidth / 2) / 0.85, y: (window.innerHeight / 2) / 0.85 };
 const cursorTarget = { x: cursorPos.x, y: cursorPos.y };
 const cursorEase = 0.14;
 const cursorScale = { current: 1, target: 1 };
@@ -311,8 +311,8 @@ function renderCursor() {
 
 if (window.matchMedia("(pointer: fine)").matches) {
   window.addEventListener("pointermove", event => {
-    cursorTarget.x = event.clientX;
-    cursorTarget.y = event.clientY;
+    cursorTarget.x = event.clientX / 0.85;
+    cursorTarget.y = event.clientY / 0.85;
     customCursor.classList.add("is-visible");
   });
   window.addEventListener("pointerdown", () => {
@@ -468,13 +468,13 @@ window.addEventListener("keydown", event => {
 });
 
 scene.addEventListener("pointermove", event => {
-  document.documentElement.style.setProperty("--pointer-x", `${event.clientX}px`);
+  document.documentElement.style.setProperty("--pointer-x", `${event.clientX / 0.85}px`);
   document.documentElement.style.setProperty("--pointer-y", `${event.clientY}px`);
 });
 
 profile.addEventListener("pointermove", event => {
   const bounds = profile.getBoundingClientRect();
-  const x = (event.clientX - bounds.left) / bounds.width;
+  const x = (event.clientX / 0.85 - bounds.left) / bounds.width;
   const y = (event.clientY - bounds.top) / bounds.height;
   profile.style.setProperty("--tilt-x", `${(0.5 - y) * 5}deg`);
   profile.style.setProperty("--tilt-y", `${(x - 0.5) * 7}deg`);
