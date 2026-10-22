@@ -8,6 +8,10 @@ const backgroundVideoCdn =
 const staticFiles = [
   "avatar.gif",
   "cursor.png",
+  "yessirskiii.mp3",
+  "yessirskiii-cover.jpg",
+  "fell-in-luv.mp3",
+  "fell-in-luv-cover.jpg",
   "twig.mp3",
   "twig-cover.png",
   "feel-my-wrath.mp3",
