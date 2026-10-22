@@ -3,8 +3,6 @@ import { resolve } from "node:path";
 
 const projectRoot = resolve(import.meta.dirname, "..");
 const outputDirectory = resolve(projectRoot, "dist");
-const backgroundVideoCdn =
-  "https://media.githubusercontent.com/media/pandaeatdonuts-byte/barebleed/main/background.mp4";
 const staticFiles = [
   "avatar.gif",
   "cursor.png",
@@ -32,8 +30,4 @@ for (const staticFile of staticFiles) {
 }
 
 const indexHtml = await readFile(resolve(projectRoot, "index.html"), "utf8");
-const productionHtml = indexHtml.replace(
-  'src="background.mp4"',
-  `src="${backgroundVideoCdn}"`,
-);
-await writeFile(resolve(outputDirectory, "index.html"), productionHtml);
+await writeFile(resolve(outputDirectory, "index.html"), indexHtml);
