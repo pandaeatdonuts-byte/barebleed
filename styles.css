@@ -530,7 +530,7 @@
     
     .cd-wrap {
       position: fixed;
-      left: 4.5vw;
+      left: 6.8vw;
       top: 50%;
       z-index: 6;
       width: clamp(300px, 36vw, 540px);
@@ -660,7 +660,7 @@
       --shine-x: 50%;
       --shine-y: 35%;
       position: fixed;
-      right: 5vw;
+      right: 6.8vw;
       top: 50%;
       z-index: 5;
       display: grid;
