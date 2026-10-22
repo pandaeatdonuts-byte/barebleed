@@ -879,8 +879,8 @@
       fill: currentColor;
     }
 
-    button.social {
-      padding: 0;
+    a.social {
+      text-decoration: none;
       appearance: none;
     }
 
@@ -1071,137 +1071,6 @@
       background: #fff;
       box-shadow: none;
       opacity: .9;
-    }
-
-    /* Discord picker. */
-    .discord-picker {
-      position: fixed;
-      inset: 0;
-      z-index: 50;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 28px;
-      padding: 24px;
-      background: rgba(2, 3, 5, .52);
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity .45s ease, visibility .45s;
-    }
-
-    .discord-picker.is-open {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
-
-    .discord-picker-panel {
-      display: grid;
-      justify-items: center;
-      width: min(90vw, 420px);
-      padding: 0;
-      border: 0;
-      background: transparent;
-      transform: translateY(14px);
-      transition: transform .55s cubic-bezier(.16, 1, .3, 1);
-    }
-
-    .discord-picker.is-open .discord-picker-panel {
-      transform: translateY(0);
-    }
-
-    .discord-picker-title {
-      margin: 0 0 22px;
-      color: rgba(255, 255, 255, .55);
-      font: 600 10px/1 Arial, sans-serif;
-      letter-spacing: .2em;
-      text-transform: lowercase;
-      text-align: center;
-    }
-
-    .discord-picker-title::after {
-      content: "";
-      display: block;
-      width: 40px;
-      height: 1px;
-      margin: 16px auto 0;
-      background: #a01020;
-      box-shadow: 0 0 14px rgba(184, 18, 38, .7);
-    }
-
-    .discord-picker-options {
-      display: grid;
-      gap: 18px;
-      justify-items: center;
-      width: 100%;
-    }
-
-    .discord-picker-option {
-      display: grid;
-      gap: 8px;
-      justify-items: center;
-      width: auto;
-      padding: 0;
-      border: 0;
-      border-radius: 0;
-      color: #fff;
-      background: transparent;
-      box-shadow: none;
-      text-decoration: none;
-      transition: opacity .25s ease, transform .3s cubic-bezier(.16, 1, .3, 1);
-    }
-
-    .discord-picker-label {
-      color: #fff;
-      font: 700 clamp(42px, 9vw, 64px)/.95 Arial, sans-serif;
-      letter-spacing: -.06em;
-      text-transform: lowercase;
-      text-shadow: 0 5px 28px rgba(0, 0, 0, .4), 0 0 30px rgba(178, 18, 38, .14);
-      transition: text-shadow .25s ease;
-    }
-
-    .discord-picker-hint {
-      color: rgba(255, 255, 255, .4);
-      font: italic 500 14px/1.3 Georgia, "Times New Roman", serif;
-      letter-spacing: 0;
-      text-transform: none;
-      text-shadow: 0 2px 18px rgba(0, 0, 0, .75);
-      transition: color .25s ease;
-    }
-
-    .discord-picker-option:hover {
-      background: transparent;
-      border-color: transparent;
-      box-shadow: none;
-      transform: translateY(-3px) scale(1.02);
-    }
-
-    .discord-picker-option:hover .discord-picker-label {
-      text-shadow: 0 5px 28px rgba(0, 0, 0, .4), 0 0 40px rgba(220, 18, 38, .28);
-    }
-
-    .discord-picker-option:hover .discord-picker-hint {
-      color: rgba(255, 255, 255, .62);
-    }
-
-    .discord-picker-close {
-      position: relative;
-      z-index: 1;
-      margin-top: 8px;
-      border: 0;
-      background: transparent;
-      color: rgba(255, 255, 255, .55);
-      font: 500 clamp(16px, 2vw, 22px)/1 monospace;
-      letter-spacing: .08em;
-      text-transform: lowercase;
-      text-shadow: 0 3px 25px rgba(0, 0, 0, .7);
-      transition: color .2s ease;
-    }
-
-    .discord-picker-close:hover {
-      color: rgba(255, 255, 255, .95);
     }
 
     /* Entry gate. */
@@ -1434,14 +1303,14 @@
       <p class="bio">c++ and web developer.<br> also known as a5wv or drizzy </p>
 
       <nav class="socials" aria-label="Social links">
-        <button class="social" id="discord-open" type="button" aria-label="Discord" aria-haspopup="dialog"
-          aria-controls="discord-picker">
+        <a class="social" href="https://discord.com/users/692034887212990524" target="_blank"
+          rel="noopener noreferrer nofollow" aria-label="Discord">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path
               d="M20.317 4.3698a19.7913 19.7913 0 0 0-4.8851-1.5152.0741.0741 0 0 0-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 0 0-.0785-.037 19.7363 19.7363 0 0 0-4.8852 1.515.0699.0699 0 0 0-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 0 0 .0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 0 0 .0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 0 0-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 0 1-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 0 1 .0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 0 1 .0785.0095c.1202.099.246.198.3728.2924a.077.077 0 0 1-.0066.1276 12.2986 12.2986 0 0 1-1.873.8914.0766.0766 0 0 0-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 0 0 .0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 0 0 .0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 0 0-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z">
             </path>
           </svg>
-        </button>
+        </a>
       </nav>
     </section>
 
@@ -1449,26 +1318,6 @@
       <span class="entry-copy">[ click to enter ]</span>
     </button>
   </main>
-
-  <div class="discord-picker" id="discord-picker" role="dialog" aria-modal="true" aria-labelledby="discord-picker-title"
-    hidden>
-    <div class="discord-picker-panel">
-      <p class="discord-picker-title" id="discord-picker-title">discord</p>
-      <div class="discord-picker-options">
-        <a class="discord-picker-option" href="https://discord.com/users/1352028232127352882" target="_blank"
-          rel="noopener noreferrer nofollow">
-          <span class="discord-picker-label">main</span>
-          <span class="discord-picker-hint">@barebleed</span>
-        </a>
-        <a class="discord-picker-option" href="https://discord.com/users/1123597605113438351" target="_blank"
-          rel="noopener noreferrer nofollow">
-          <span class="discord-picker-label">alt</span>
-          <span class="discord-picker-hint">@0271942</span>
-        </a>
-      </div>
-    </div>
-    <button class="discord-picker-close" id="discord-picker-close" type="button">[ close ]</button>
-  </div>
 
   <script>
     const scene = document.getElementById("scene");
@@ -1489,9 +1338,6 @@
     const volumeSlider = document.getElementById("volume");
     const bgVideo = document.querySelector(".bg-video");
     const customCursor = document.getElementById("custom-cursor");
-    const discordOpen = document.getElementById("discord-open");
-    const discordPicker = document.getElementById("discord-picker");
-    const discordClose = document.getElementById("discord-picker-close");
 
     bgVideo.play().catch(() => { });
 
@@ -1565,39 +1411,6 @@
     }
 
     requestAnimationFrame(tickCd);
-
-    function openDiscordPicker() {
-      discordPicker.hidden = false;
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => discordPicker.classList.add("is-open"));
-      });
-      discordClose.focus();
-    }
-
-    function closeDiscordPicker() {
-      discordPicker.classList.remove("is-open");
-      const finish = () => {
-        if (!discordPicker.classList.contains("is-open")) discordPicker.hidden = true;
-      };
-      discordPicker.addEventListener("transitionend", finish, { once: true });
-      setTimeout(finish, 320);
-      discordOpen.focus();
-    }
-
-    discordOpen.addEventListener("click", openDiscordPicker);
-    discordClose.addEventListener("click", closeDiscordPicker);
-    discordPicker.addEventListener("click", event => {
-      if (event.target === discordPicker) closeDiscordPicker();
-    });
-    discordPicker.querySelectorAll(".discord-picker-option").forEach(option => {
-      option.addEventListener("click", () => closeDiscordPicker());
-    });
-    window.addEventListener("keydown", event => {
-      if (event.key === "Escape" && discordPicker.classList.contains("is-open")) {
-        event.preventDefault();
-        closeDiscordPicker();
-      }
-    });
 
     const cursorPos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
     const cursorTarget = { x: cursorPos.x, y: cursorPos.y };
