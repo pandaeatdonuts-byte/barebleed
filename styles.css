@@ -537,7 +537,7 @@
       left: 6.8vw;
       top: 50%;
       z-index: 6;
-      width: clamp(375px, 45vw, 675px);
+      width: clamp(413px, 49.5vw, 743px);
       aspect-ratio: 1;
       transform: translate3d(-26px, calc(-50% + 18px), 0);
       opacity: 0;
@@ -1300,8 +1300,8 @@
       .cd-wrap {
         position: static;
         order: 1;
-        width: 70vw;
-        max-width: 375px;
+        width: 77vw;
+        max-width: 413px;
         margin: 84px 0 6px;
         transform: translate3d(0, 18px, 0);
       }
