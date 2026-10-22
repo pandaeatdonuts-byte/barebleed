@@ -15,6 +15,9 @@ const trackSubtitle = document.querySelector(".track-subtitle");
 const soundToggle = document.getElementById("sound-toggle");
 const volumeSlider = document.getElementById("volume");
 const customCursor = document.getElementById("custom-cursor");
+const projectsOpen = document.getElementById("projects-open");
+const projectsPicker = document.getElementById("projects-picker");
+const projectsClose = document.getElementById("projects-picker-close");
 
 
 const bgCanvas = document.querySelector(".bg-canvas");
@@ -424,6 +427,39 @@ function enterProfile() {
 }
 
 entry.addEventListener("click", enterProfile);
+
+function openProjectsPicker() {
+  projectsPicker.hidden = false;
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => projectsPicker.classList.add("is-open"));
+  });
+  projectsClose.focus();
+}
+
+function closeProjectsPicker() {
+  projectsPicker.classList.remove("is-open");
+  const finish = () => {
+    if (!projectsPicker.classList.contains("is-open")) projectsPicker.hidden = true;
+  };
+  projectsPicker.addEventListener("transitionend", finish, { once: true });
+  setTimeout(finish, 320);
+  projectsOpen.focus();
+}
+
+projectsOpen.addEventListener("click", openProjectsPicker);
+projectsClose.addEventListener("click", closeProjectsPicker);
+projectsPicker.addEventListener("click", event => {
+  if (event.target === projectsPicker) closeProjectsPicker();
+});
+projectsPicker.querySelectorAll(".project-link").forEach(link => {
+  link.addEventListener("click", () => closeProjectsPicker());
+});
+window.addEventListener("keydown", event => {
+  if (event.key === "Escape" && projectsPicker.classList.contains("is-open")) {
+    event.preventDefault();
+    closeProjectsPicker();
+  }
+});
 window.addEventListener("keydown", event => {
   if (!scene.classList.contains("entered") && (event.key === "Enter" || event.key === " ")) {
     event.preventDefault();

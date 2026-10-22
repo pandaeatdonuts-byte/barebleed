@@ -96,7 +96,7 @@
 
       <p class="bio">Hey im barebleed, also reffered to as bare. <br> im also known as a5wv or drizzy. <br>c++ and web
         coder!, i own Sync external and develop a few other externals such as lynx or wrath! <br> Check out my projects
-        <a href="https://github.com/pandaeatdonuts-byte" target="_blank" rel="noopener noreferrer nofollow">here</a>.
+        <button class="bio-link" id="projects-open" type="button" aria-haspopup="dialog" aria-controls="projects-picker">here</button>.
       </p>
 
       <nav class="socials" aria-label="Social links">
@@ -126,6 +126,43 @@
         </a>
       </nav>
     </section>
+
+    <div class="projects-picker" id="projects-picker" role="dialog" aria-modal="true" aria-labelledby="projects-picker-title"
+      hidden>
+      <div class="projects-picker-panel">
+        <p class="projects-picker-title" id="projects-picker-title">projects</p>
+        <div class="projects-picker-options">
+          <div class="project-option">
+            <span class="project-name">sync</span>
+            <div class="project-links">
+              <a class="project-link" href="https://getsync.lol" target="_blank"
+                rel="noopener noreferrer nofollow">site</a>
+              <a class="project-link" href="https://discord.gg/getsync" target="_blank"
+                rel="noopener noreferrer nofollow">discord</a>
+            </div>
+          </div>
+          <div class="project-option">
+            <span class="project-name">lynx</span>
+            <div class="project-links">
+              <a class="project-link" href="https://getlynx.cc" target="_blank"
+                rel="noopener noreferrer nofollow">site</a>
+              <a class="project-link" href="https://discord.gg/closetcheat" target="_blank"
+                rel="noopener noreferrer nofollow">discord</a>
+            </div>
+          </div>
+          <div class="project-option">
+            <span class="project-name">wrath</span>
+            <div class="project-links">
+              <a class="project-link" href="https://getwrath.lol" target="_blank"
+                rel="noopener noreferrer nofollow">site</a>
+              <a class="project-link" href="https://discord.gg/Dz65KydqgM" target="_blank"
+                rel="noopener noreferrer nofollow">discord</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="projects-picker-close" id="projects-picker-close" type="button">[ close ]</button>
+    </div>
 
     <button class="entry" id="entry" type="button">
       <span class="entry-copy">[ click to enter ]</span>
