@@ -349,14 +349,14 @@ function syncProgress() {
 }
 
 const playlist = [
-  { title: "fell in luv", artist: "playboi carti ft. bryson tiller", src: "fell-in-luv.mp3", cover: "fell-in-luv-cover.jpg" },
-  { title: "yessirskiii", artist: "lil uzi vert & 21 savage", src: "yessirskiii.mp3", cover: "yessirskiii-cover.jpg" },
-  { title: "marble floors", artist: "summrs", src: "marble-floors.mp3", cover: "marble-floors-cover.jpg" },
-  { title: "twig", artist: "yen", src: "twig.mp3", cover: "twig-cover.png" },
-  { title: "feel my wrath", artist: "yen", src: "feel-my-wrath.mp3", cover: "feel-my-wrath-cover.png" },
-  { title: "bastard", artist: "yen", src: "bastard.mp3", cover: "bastard-cover.png" },
-  { title: "i keep calling ...", artist: "wifiskeleton, jaydes", src: "i-keep-calling.mp3", cover: "i-keep-calling-cover.png" },
-  { title: "i'm a piece of shit", artist: "yen", src: "im-a-piece-of-shit.mp3", cover: "im-a-piece-of-shit-cover.png" },
+  { title: "fell in luv", artist: "playboi carti ft. bryson tiller", src: "music/fell-in-luv.mp3", cover: "music/fell-in-luv-cover.jpg" },
+  { title: "yessirskiii", artist: "lil uzi vert & 21 savage", src: "music/yessirskiii.mp3", cover: "music/yessirskiii-cover.jpg" },
+  { title: "marble floors", artist: "summrs", src: "music/marble-floors.mp3", cover: "music/marble-floors-cover.jpg" },
+  { title: "twig", artist: "yen", src: "music/twig.mp3", cover: "music/twig-cover.png" },
+  { title: "feel my wrath", artist: "yen", src: "music/feel-my-wrath.mp3", cover: "music/feel-my-wrath-cover.png" },
+  { title: "bastard", artist: "yen", src: "music/bastard.mp3", cover: "music/bastard-cover.png" },
+  { title: "i keep calling ...", artist: "wifiskeleton, jaydes", src: "music/i-keep-calling.mp3", cover: "music/i-keep-calling-cover.png" },
+  { title: "i'm a piece of shit", artist: "yen", src: "music/im-a-piece-of-shit.mp3", cover: "music/im-a-piece-of-shit-cover.png" },
 ];
 
 scanCover(playlist[0].cover);
