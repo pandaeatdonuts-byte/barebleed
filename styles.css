@@ -6,6 +6,10 @@
       --pointer-y: 50vh;
     }
 
+    html {
+      zoom: 0.85;
+    }
+
     * {
       box-sizing: border-box;
       cursor: none !important;
