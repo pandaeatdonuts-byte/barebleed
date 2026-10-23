@@ -469,13 +469,13 @@ window.addEventListener("keydown", event => {
 
 scene.addEventListener("pointermove", event => {
   document.documentElement.style.setProperty("--pointer-x", `${event.clientX / 0.85}px`);
-  document.documentElement.style.setProperty("--pointer-y", `${event.clientY}px`);
+  document.documentElement.style.setProperty("--pointer-y", `${event.clientY / 0.85}px`);
 });
 
 profile.addEventListener("pointermove", event => {
   const bounds = profile.getBoundingClientRect();
   const x = (event.clientX / 0.85 - bounds.left) / bounds.width;
-  const y = (event.clientY - bounds.top) / bounds.height;
+  const y = (event.clientY / 0.85 - bounds.top) / bounds.height;
   profile.style.setProperty("--tilt-x", `${(0.5 - y) * 5}deg`);
   profile.style.setProperty("--tilt-y", `${(x - 0.5) * 7}deg`);
   profile.style.setProperty("--move-x", `${(x - 0.5) * 10}px`);
